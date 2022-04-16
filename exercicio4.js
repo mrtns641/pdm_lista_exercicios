@@ -9,7 +9,7 @@
     inválida, o programa deve informá-lo disso e mostrar o menu de opções novamente. Use o objeto 
     JSON do exercício 4 para realizar as operações aritméticas.
 */
-const entrada = require('prompt-sync') ({sigint: true});
+const prompt = require('prompt-sync') ({sigint: true});
 
 const operacoes = {
     somar: (n1, n2) => n1 + n2,
@@ -18,12 +18,12 @@ const operacoes = {
     dividir: (n1, n2) => n1 / n2
 }
 
- calculadora = () => {
+const calculadora = () => {
     var op, n1, n2;
 
     do{
-        n1 = parseInt(entrada("Digite o primeiro valor? "));
-        n2 = parseInt(entrada("Digite o segundo valor? "));
+        n1 = parseInt(prompt("Digite o primeiro valor? "));
+        n2 = parseInt(prompt("Digite o segundo valor? "));
 
         console.log("------------MENU------------");
         console.log("1 - SOMA");
@@ -33,7 +33,7 @@ const operacoes = {
         console.log("5 - SAIR");
         console.log("----------------------------");
 
-        op = parseInt(entrada("Qual operação deseja realizar? "));
+        op = parseInt(prompt("Qual operação deseja realizar? "));
     
        switch (op) {
             case 1:
